@@ -1,25 +1,25 @@
 .complete {
-	background-color: teal;
+    background-color: teal;
 }
 
 .inprogress {
-	background-color: orange;
-	cursor: pointer;
+    background-color: orange;
+    cursor: pointer;
 }
 
 .inprogress:hover {
-	background-color: cyan;
+    background-color: cyan;
 }
 
 .delayed {
-	background-color: red;
-	cursor: pointer;
+    background-color: red;
+    cursor: pointer;
 }
 
 .delayed:hover {
-	background-color: cyan;
+    background-color: cyan;
 }
 
 .notstarted {
-	background-color: lightgray;
+    background-color: lightgray;
 }

@@ -3,22 +3,22 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[RX_Job](
-	[Id] [uniqueidentifier] default newid() NOT NULL,
-	[ContractorID] [int] NULL,
-	[Name] [varchar](50) NULL,
-	[Status] [varchar](50) NULL,
-	[Floor] [int] NULL,
-	[Room] [int] NULL,
-	[DelayReason] [varchar](50) NULL,
-	[DateCreated] [datetime] NULL,
-	[DateCompleted] [datetime] NULL,
-	[DateDelayed] [datetime] NULL,
-	[StatusNum] [int] NULL,
-	[RJobID] [int] NULL,
-	[RoomTypeId] [uniqueidentifier] NULL,
-	CONSTRAINT [PK_RX_Job] PRIMARY KEY CLUSTERED 
+    [Id] [uniqueidentifier] default newid() NOT NULL,
+    [ContractorID] [int] NULL,
+    [Name] [varchar](50) NULL,
+    [Status] [varchar](50) NULL,
+    [Floor] [int] NULL,
+    [Room] [int] NULL,
+    [DelayReason] [varchar](50) NULL,
+    [DateCreated] [datetime] NULL,
+    [DateCompleted] [datetime] NULL,
+    [DateDelayed] [datetime] NULL,
+    [StatusNum] [int] NULL,
+    [RJobID] [int] NULL,
+    [RoomTypeId] [uniqueidentifier] NULL,
+    CONSTRAINT [PK_RX_Job] PRIMARY KEY CLUSTERED 
 (
-	[Id] ASC
+    [Id] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
@@ -29,12 +29,12 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[RX_RoomType](
-	[Id] [uniqueidentifier] default newid() NOT NULL,
-	[Name] [varchar](28) NOT NULL,
-	[Description] [varchar](255) NULL,
-	PRIMARY KEY CLUSTERED 
+    [Id] [uniqueidentifier] default newid() NOT NULL,
+    [Name] [varchar](28) NOT NULL,
+    [Description] [varchar](255) NULL,
+    PRIMARY KEY CLUSTERED 
 (
-	[Id] ASC
+    [Id] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
@@ -139,7 +139,7 @@ INSERT [dbo].[RX_Job] ([Id], [ContractorID], [Name], [Status], [Floor], [Room], 
 INSERT [dbo].[RX_Job] ([Id], [ContractorID], [Name], [Status], [Floor], [Room], [DelayReason], [DateCreated], [DateCompleted], [DateDelayed], [StatusNum], [RJobID], [RoomTypeId]) VALUES (newid(), NULL, N'Job2_17_0', N'Not Started', 2, 17, NULL, CAST(N'2017-05-08T13:09:41.033' AS DateTime), NULL, NULL, 2, NULL, N'e4cdf330-608e-43a1-bb0c-2483233e2163')
 INSERT [dbo].[RX_Job] ([Id], [ContractorID], [Name], [Status], [Floor], [Room], [DelayReason], [DateCreated], [DateCompleted], [DateDelayed], [StatusNum], [RJobID], [RoomTypeId]) VALUES (newid(), NULL, N'Job2_17_1', N'Not Started', 2, 17, NULL, CAST(N'2017-05-08T13:09:41.050' AS DateTime), NULL, NULL, 2, NULL, N'8186da7f-c775-4299-aecc-22ec5713023f')
 INSERT [dbo].[RX_Job] ([Id], [ContractorID], [Name], [Status], [Floor], [Room], [DelayReason], [DateCreated], [DateCompleted], [DateDelayed], [StatusNum], [RJobID], [RoomTypeId]) VALUES (newid(), NULL, N'Job2_18_0', N'Not Started', 2, 18, NULL, CAST(N'2017-05-08T13:09:41.083' AS DateTime), NULL, NULL, 2, NULL, N'ba020bf0-b205-4b9a-9390-ff7823d2cc0f')
-GO				
+GO              
 INSERT [dbo].[RX_Job] ([Id], [ContractorID], [Name], [Status], [Floor], [Room], [DelayReason], [DateCreated], [DateCompleted], [DateDelayed], [StatusNum], [RJobID], [RoomTypeId]) VALUES (newid(), NULL, N'Job2_18_1', N'Not Started', 2, 18, NULL, CAST(N'2017-05-08T13:09:41.107' AS DateTime), NULL, NULL, 2, NULL, N'3373b164-a8ab-44ab-914c-d4f88ffed881')
 INSERT [dbo].[RX_Job] ([Id], [ContractorID], [Name], [Status], [Floor], [Room], [DelayReason], [DateCreated], [DateCompleted], [DateDelayed], [StatusNum], [RJobID], [RoomTypeId]) VALUES (newid(), NULL, N'Job2_19_0', N'In Progress', 2, 19, NULL, CAST(N'2017-05-08T13:09:41.127' AS DateTime), NULL, NULL, 3, NULL, N'ec572a33-1d58-4671-870e-bc4756f79ee4')
 INSERT [dbo].[RX_Job] ([Id], [ContractorID], [Name], [Status], [Floor], [Room], [DelayReason], [DateCreated], [DateCompleted], [DateDelayed], [StatusNum], [RJobID], [RoomTypeId]) VALUES (newid(), NULL, N'Job2_19_1', N'Not Started', 2, 19, NULL, CAST(N'2017-05-08T13:09:41.143' AS DateTime), NULL, NULL, 2, NULL, N'e4cdf330-608e-43a1-bb0c-2483233e2163')
@@ -240,7 +240,7 @@ INSERT [dbo].[RX_Job] ([Id], [ContractorID], [Name], [Status], [Floor], [Room], 
 INSERT [dbo].[RX_Job] ([Id], [ContractorID], [Name], [Status], [Floor], [Room], [DelayReason], [DateCreated], [DateCompleted], [DateDelayed], [StatusNum], [RJobID], [RoomTypeId]) VALUES (newid(), NULL, N'Job4_5_0', N'Delayed', 4, 5, N'Room Not Ready', CAST(N'2017-05-08T13:09:42.840' AS DateTime), NULL, CAST(N'2017-05-08T13:09:42.840' AS DateTime), 4, NULL, N'8186da7f-c775-4299-aecc-22ec5713023f')
 INSERT [dbo].[RX_Job] ([Id], [ContractorID], [Name], [Status], [Floor], [Room], [DelayReason], [DateCreated], [DateCompleted], [DateDelayed], [StatusNum], [RJobID], [RoomTypeId]) VALUES (newid(), NULL, N'Job4_5_1', N'Not Started', 4, 5, NULL, CAST(N'2017-05-08T13:09:42.853' AS DateTime), NULL, NULL, 2, NULL, N'a7283ef0-4600-41e9-9ee0-03144be29ec0')
 INSERT [dbo].[RX_Job] ([Id], [ContractorID], [Name], [Status], [Floor], [Room], [DelayReason], [DateCreated], [DateCompleted], [DateDelayed], [StatusNum], [RJobID], [RoomTypeId]) VALUES (newid(), NULL, N'Job4_6_0', N'Not Started', 4, 6, NULL, CAST(N'2017-05-08T13:09:42.867' AS DateTime), NULL, NULL, 2, NULL, N'8186da7f-c775-4299-aecc-22ec5713023f')
-GO				
+GO              
 INSERT [dbo].[RX_Job] ([Id], [ContractorID], [Name], [Status], [Floor], [Room], [DelayReason], [DateCreated], [DateCompleted], [DateDelayed], [StatusNum], [RJobID], [RoomTypeId]) VALUES (newid(), NULL, N'Job4_6_1', N'Not Started', 4, 6, NULL, CAST(N'2017-05-08T13:09:42.883' AS DateTime), NULL, NULL, 2, NULL, N'e6571828-060e-4d8c-8e5c-6de8814b03c0')
 INSERT [dbo].[RX_Job] ([Id], [ContractorID], [Name], [Status], [Floor], [Room], [DelayReason], [DateCreated], [DateCompleted], [DateDelayed], [StatusNum], [RJobID], [RoomTypeId]) VALUES (newid(), NULL, N'Job4_7_0', N'Complete', 4, 7, NULL, CAST(N'2017-05-08T13:09:42.897' AS DateTime), CAST(N'2017-05-08T13:09:42.897' AS DateTime), NULL, 1, NULL, N'ba020bf0-b205-4b9a-9390-ff7823d2cc0f')
 INSERT [dbo].[RX_Job] ([Id], [ContractorID], [Name], [Status], [Floor], [Room], [DelayReason], [DateCreated], [DateCompleted], [DateDelayed], [StatusNum], [RJobID], [RoomTypeId]) VALUES (newid(), NULL, N'Job4_7_1', N'In Progress', 4, 7, NULL, CAST(N'2017-05-08T13:09:42.910' AS DateTime), NULL, NULL, 3, NULL, N'911c7af6-2d20-4b06-ad06-bd835a3871f1')
@@ -341,7 +341,7 @@ INSERT [dbo].[RX_Job] ([Id], [ContractorID], [Name], [Status], [Floor], [Room], 
 INSERT [dbo].[RX_Job] ([Id], [ContractorID], [Name], [Status], [Floor], [Room], [DelayReason], [DateCreated], [DateCompleted], [DateDelayed], [StatusNum], [RJobID], [RoomTypeId]) VALUES (newid(), NULL, N'Job5_24_0', N'Complete', 5, 24, NULL, CAST(N'2017-05-08T13:09:44.790' AS DateTime), CAST(N'2017-05-08T13:09:44.790' AS DateTime), NULL, 1, NULL, N'ec572a33-1d58-4671-870e-bc4756f79ee4')
 INSERT [dbo].[RX_Job] ([Id], [ContractorID], [Name], [Status], [Floor], [Room], [DelayReason], [DateCreated], [DateCompleted], [DateDelayed], [StatusNum], [RJobID], [RoomTypeId]) VALUES (newid(), NULL, N'Job5_24_1', N'Not Started', 5, 24, NULL, CAST(N'2017-05-08T13:09:44.803' AS DateTime), NULL, NULL, 2, NULL, N'e6571828-060e-4d8c-8e5c-6de8814b03c0')
 INSERT [dbo].[RX_Job] ([Id], [ContractorID], [Name], [Status], [Floor], [Room], [DelayReason], [DateCreated], [DateCompleted], [DateDelayed], [StatusNum], [RJobID], [RoomTypeId]) VALUES (newid(), NULL, N'Job5_25_0', N'Delayed', 5, 25, N'Labor Shortage', CAST(N'2017-05-08T13:09:44.820' AS DateTime), NULL, CAST(N'2017-05-08T13:09:44.820' AS DateTime), 4, NULL, N'3373b164-a8ab-44ab-914c-d4f88ffed881')
-GO				
+GO              
 INSERT [dbo].[RX_Job] ([Id], [ContractorID], [Name], [Status], [Floor], [Room], [DelayReason], [DateCreated], [DateCompleted], [DateDelayed], [StatusNum], [RJobID], [RoomTypeId]) VALUES (newid(), NULL, N'Job5_25_1', N'Complete', 5, 25, NULL, CAST(N'2017-05-08T13:09:44.833' AS DateTime), CAST(N'2017-05-08T13:09:44.833' AS DateTime), NULL, 1, NULL, N'02a5381a-65ab-40c5-a99e-5c591290a901')
 INSERT [dbo].[RX_Job] ([Id], [ContractorID], [Name], [Status], [Floor], [Room], [DelayReason], [DateCreated], [DateCompleted], [DateDelayed], [StatusNum], [RJobID], [RoomTypeId]) VALUES (newid(), NULL, N'Job5_26_0', N'In Progress', 5, 26, NULL, CAST(N'2017-05-08T13:09:44.850' AS DateTime), NULL, NULL, 3, NULL, N'ba020bf0-b205-4b9a-9390-ff7823d2cc0f')
 INSERT [dbo].[RX_Job] ([Id], [ContractorID], [Name], [Status], [Floor], [Room], [DelayReason], [DateCreated], [DateCompleted], [DateDelayed], [StatusNum], [RJobID], [RoomTypeId]) VALUES (newid(), NULL, N'Job5_26_1', N'Not Started', 5, 26, NULL, CAST(N'2017-05-08T13:09:44.863' AS DateTime), NULL, NULL, 2, NULL, N'a198765c-357a-456e-ae4d-c49bb62d35d3')
@@ -442,7 +442,7 @@ INSERT [dbo].[RX_Job] ([Id], [ContractorID], [Name], [Status], [Floor], [Room], 
 INSERT [dbo].[RX_Job] ([Id], [ContractorID], [Name], [Status], [Floor], [Room], [DelayReason], [DateCreated], [DateCompleted], [DateDelayed], [StatusNum], [RJobID], [RoomTypeId]) VALUES (newid(), NULL, N'Job7_12_0', N'Complete', 7, 12, NULL, CAST(N'2017-05-08T13:09:47.290' AS DateTime), CAST(N'2017-05-08T13:09:47.290' AS DateTime), NULL, 1, NULL, N'02a5381a-65ab-40c5-a99e-5c591290a901')
 INSERT [dbo].[RX_Job] ([Id], [ContractorID], [Name], [Status], [Floor], [Room], [DelayReason], [DateCreated], [DateCompleted], [DateDelayed], [StatusNum], [RJobID], [RoomTypeId]) VALUES (newid(), NULL, N'Job7_12_1', N'Not Started', 7, 12, NULL, CAST(N'2017-05-08T13:09:47.303' AS DateTime), NULL, NULL, 2, NULL, N'a198765c-357a-456e-ae4d-c49bb62d35d3')
 INSERT [dbo].[RX_Job] ([Id], [ContractorID], [Name], [Status], [Floor], [Room], [DelayReason], [DateCreated], [DateCompleted], [DateDelayed], [StatusNum], [RJobID], [RoomTypeId]) VALUES (newid(), NULL, N'Job7_13_0', N'In Progress', 7, 13, NULL, CAST(N'2017-05-08T13:09:47.317' AS DateTime), NULL, NULL, 3, NULL, N'e4cdf330-608e-43a1-bb0c-2483233e2163')
-GO				
+GO              
 INSERT [dbo].[RX_Job] ([Id], [ContractorID], [Name], [Status], [Floor], [Room], [DelayReason], [DateCreated], [DateCompleted], [DateDelayed], [StatusNum], [RJobID], [RoomTypeId]) VALUES (newid(), NULL, N'Job7_13_1', N'In Progress', 7, 13, NULL, CAST(N'2017-05-08T13:09:47.343' AS DateTime), NULL, NULL, 3, NULL, N'50afd651-40d4-4704-8c06-dfed2f922ab9')
 INSERT [dbo].[RX_Job] ([Id], [ContractorID], [Name], [Status], [Floor], [Room], [DelayReason], [DateCreated], [DateCompleted], [DateDelayed], [StatusNum], [RJobID], [RoomTypeId]) VALUES (newid(), NULL, N'Job7_14_0', N'Not Started', 7, 14, NULL, CAST(N'2017-05-08T13:09:47.357' AS DateTime), NULL, NULL, 2, NULL, N'e6571828-060e-4d8c-8e5c-6de8814b03c0')
 INSERT [dbo].[RX_Job] ([Id], [ContractorID], [Name], [Status], [Floor], [Room], [DelayReason], [DateCreated], [DateCompleted], [DateDelayed], [StatusNum], [RJobID], [RoomTypeId]) VALUES (newid(), NULL, N'Job7_14_1', N'Not Started', 7, 14, NULL, CAST(N'2017-05-08T13:09:47.370' AS DateTime), NULL, NULL, 2, NULL, N'e6571828-060e-4d8c-8e5c-6de8814b03c0')
@@ -543,7 +543,7 @@ INSERT [dbo].[RX_Job] ([Id], [ContractorID], [Name], [Status], [Floor], [Room], 
 INSERT [dbo].[RX_Job] ([Id], [ContractorID], [Name], [Status], [Floor], [Room], [DelayReason], [DateCreated], [DateCompleted], [DateDelayed], [StatusNum], [RJobID], [RoomTypeId]) VALUES (newid(), NULL, N'Job9_0_0', N'In Progress', 9, 0, NULL, CAST(N'2017-05-08T13:09:49.173' AS DateTime), NULL, NULL, 3, NULL, N'8186da7f-c775-4299-aecc-22ec5713023f')
 INSERT [dbo].[RX_Job] ([Id], [ContractorID], [Name], [Status], [Floor], [Room], [DelayReason], [DateCreated], [DateCompleted], [DateDelayed], [StatusNum], [RJobID], [RoomTypeId]) VALUES (newid(), NULL, N'Job9_0_1', N'Not Started', 9, 0, NULL, CAST(N'2017-05-08T13:09:49.190' AS DateTime), NULL, NULL, 2, NULL, N'911c7af6-2d20-4b06-ad06-bd835a3871f1')
 INSERT [dbo].[RX_Job] ([Id], [ContractorID], [Name], [Status], [Floor], [Room], [DelayReason], [DateCreated], [DateCompleted], [DateDelayed], [StatusNum], [RJobID], [RoomTypeId]) VALUES (newid(), NULL, N'Job9_1_0', N'Complete', 9, 1, NULL, CAST(N'2017-05-08T13:09:49.217' AS DateTime), CAST(N'2017-05-08T13:09:49.217' AS DateTime), NULL, 1, NULL, N'a198765c-357a-456e-ae4d-c49bb62d35d3')
-GO						 
+GO                       
 INSERT [dbo].[RX_Job] ([Id], [ContractorID], [Name], [Status], [Floor], [Room], [DelayReason], [DateCreated], [DateCompleted], [DateDelayed], [StatusNum], [RJobID], [RoomTypeId]) VALUES (newid(), NULL, N'Job9_1_1', N'In Progress', 9, 1, NULL, CAST(N'2017-05-08T13:09:49.240' AS DateTime), NULL, NULL, 3, NULL, N'3373b164-a8ab-44ab-914c-d4f88ffed881')
 INSERT [dbo].[RX_Job] ([Id], [ContractorID], [Name], [Status], [Floor], [Room], [DelayReason], [DateCreated], [DateCompleted], [DateDelayed], [StatusNum], [RJobID], [RoomTypeId]) VALUES (newid(), NULL, N'Job9_2_0', N'Delayed', 9, 2, N'Labor Shortage', CAST(N'2017-05-08T13:09:49.253' AS DateTime), NULL, CAST(N'2017-05-08T13:09:49.253' AS DateTime), 4, NULL, N'ec572a33-1d58-4671-870e-bc4756f79ee4')
 INSERT [dbo].[RX_Job] ([Id], [ContractorID], [Name], [Status], [Floor], [Room], [DelayReason], [DateCreated], [DateCompleted], [DateDelayed], [StatusNum], [RJobID], [RoomTypeId]) VALUES (newid(), NULL, N'Job9_2_1', N'Not Started', 9, 2, NULL, CAST(N'2017-05-08T13:09:49.273' AS DateTime), NULL, NULL, 2, NULL, N'e4cdf330-608e-43a1-bb0c-2483233e2163')
@@ -644,7 +644,7 @@ INSERT [dbo].[RX_Job] ([Id], [ContractorID], [Name], [Status], [Floor], [Room], 
 INSERT [dbo].[RX_Job] ([Id], [ContractorID], [Name], [Status], [Floor], [Room], [DelayReason], [DateCreated], [DateCompleted], [DateDelayed], [StatusNum], [RJobID], [RoomTypeId]) VALUES (newid(), NULL, N'Job10_19_0', N'Not Started', 10, 19, NULL, CAST(N'2017-05-08T13:09:51.023' AS DateTime), NULL, NULL, 2, NULL, N'ba020bf0-b205-4b9a-9390-ff7823d2cc0f')
 INSERT [dbo].[RX_Job] ([Id], [ContractorID], [Name], [Status], [Floor], [Room], [DelayReason], [DateCreated], [DateCompleted], [DateDelayed], [StatusNum], [RJobID], [RoomTypeId]) VALUES (newid(), NULL, N'Job10_19_1', N'Complete', 10, 19, NULL, CAST(N'2017-05-08T13:09:51.053' AS DateTime), CAST(N'2017-05-08T13:09:51.053' AS DateTime), NULL, 1, NULL, N'86f23884-1971-4bdf-90db-629f887ed76a')
 INSERT [dbo].[RX_Job] ([Id], [ContractorID], [Name], [Status], [Floor], [Room], [DelayReason], [DateCreated], [DateCompleted], [DateDelayed], [StatusNum], [RJobID], [RoomTypeId]) VALUES (newid(), NULL, N'Job10_20_0', N'In Progress', 10, 20, NULL, CAST(N'2017-05-08T13:09:51.067' AS DateTime), NULL, NULL, 3, NULL, N'a198765c-357a-456e-ae4d-c49bb62d35d3')
-GO						 
+GO                       
 INSERT [dbo].[RX_Job] ([Id], [ContractorID], [Name], [Status], [Floor], [Room], [DelayReason], [DateCreated], [DateCompleted], [DateDelayed], [StatusNum], [RJobID], [RoomTypeId]) VALUES (newid(), NULL, N'Job10_20_1', N'Delayed', 10, 20, N'Other', CAST(N'2017-05-08T13:09:51.083' AS DateTime), NULL, CAST(N'2017-05-08T13:09:51.083' AS DateTime), 4, NULL, N'50afd651-40d4-4704-8c06-dfed2f922ab9')
 INSERT [dbo].[RX_Job] ([Id], [ContractorID], [Name], [Status], [Floor], [Room], [DelayReason], [DateCreated], [DateCompleted], [DateDelayed], [StatusNum], [RJobID], [RoomTypeId]) VALUES (newid(), NULL, N'Job10_21_0', N'Not Started', 10, 21, NULL, CAST(N'2017-05-08T13:09:51.100' AS DateTime), NULL, NULL, 2, NULL, N'8186da7f-c775-4299-aecc-22ec5713023f')
 INSERT [dbo].[RX_Job] ([Id], [ContractorID], [Name], [Status], [Floor], [Room], [DelayReason], [DateCreated], [DateCompleted], [DateDelayed], [StatusNum], [RJobID], [RoomTypeId]) VALUES (newid(), NULL, N'Job10_21_1', N'Not Started', 10, 21, NULL, CAST(N'2017-05-08T13:09:51.117' AS DateTime), NULL, NULL, 2, NULL, N'50afd651-40d4-4704-8c06-dfed2f922ab9')
@@ -745,7 +745,7 @@ INSERT [dbo].[RX_Job] ([Id], [ContractorID], [Name], [Status], [Floor], [Room], 
 INSERT [dbo].[RX_Job] ([Id], [ContractorID], [Name], [Status], [Floor], [Room], [DelayReason], [DateCreated], [DateCompleted], [DateDelayed], [StatusNum], [RJobID], [RoomTypeId]) VALUES (newid(), NULL, N'Job12_7_0', N'Not Started', 12, 7, NULL, CAST(N'2017-05-08T13:09:53.080' AS DateTime), CAST(N'2017-05-08T13:09:53.080' AS DateTime), NULL, 2, NULL, N'ba020bf0-b205-4b9a-9390-ff7823d2cc0f')
 INSERT [dbo].[RX_Job] ([Id], [ContractorID], [Name], [Status], [Floor], [Room], [DelayReason], [DateCreated], [DateCompleted], [DateDelayed], [StatusNum], [RJobID], [RoomTypeId]) VALUES (newid(), NULL, N'Job12_7_1', N'Not Started', 12, 7, NULL, CAST(N'2017-05-08T13:09:53.097' AS DateTime), NULL, NULL, 2, NULL, N'a198765c-357a-456e-ae4d-c49bb62d35d3')
 INSERT [dbo].[RX_Job] ([Id], [ContractorID], [Name], [Status], [Floor], [Room], [DelayReason], [DateCreated], [DateCompleted], [DateDelayed], [StatusNum], [RJobID], [RoomTypeId]) VALUES (newid(), NULL, N'Job12_8_0', N'Not Started', 12, 8, NULL, CAST(N'2017-05-08T13:09:53.110' AS DateTime), NULL, NULL, 2, NULL, N'3373b164-a8ab-44ab-914c-d4f88ffed881')
-GO						 
+GO                       
 INSERT [dbo].[RX_Job] ([Id], [ContractorID], [Name], [Status], [Floor], [Room], [DelayReason], [DateCreated], [DateCompleted], [DateDelayed], [StatusNum], [RJobID], [RoomTypeId]) VALUES (newid(), NULL, N'Job12_8_1', N'Not Started', 12, 8, NULL, CAST(N'2017-05-08T13:09:53.123' AS DateTime), NULL, NULL, 2, NULL, N'ec572a33-1d58-4671-870e-bc4756f79ee4')
 INSERT [dbo].[RX_Job] ([Id], [ContractorID], [Name], [Status], [Floor], [Room], [DelayReason], [DateCreated], [DateCompleted], [DateDelayed], [StatusNum], [RJobID], [RoomTypeId]) VALUES (newid(), NULL, N'Job12_9_0', N'Not Started', 12, 9, NULL, CAST(N'2017-05-08T13:09:53.140' AS DateTime), NULL, NULL, 2, NULL, N'e4cdf330-608e-43a1-bb0c-2483233e2163')
 INSERT [dbo].[RX_Job] ([Id], [ContractorID], [Name], [Status], [Floor], [Room], [DelayReason], [DateCreated], [DateCompleted], [DateDelayed], [StatusNum], [RJobID], [RoomTypeId]) VALUES (newid(), NULL, N'Job12_9_1', N'Not Started', 12, 9, N'Lack of Materials', CAST(N'2017-05-08T13:09:53.170' AS DateTime), NULL, CAST(N'2017-05-08T13:09:53.170' AS DateTime), 2, NULL, N'e6571828-060e-4d8c-8e5c-6de8814b03c0')
@@ -846,7 +846,7 @@ INSERT [dbo].[RX_Job] ([Id], [ContractorID], [Name], [Status], [Floor], [Room], 
 INSERT [dbo].[RX_Job] ([Id], [ContractorID], [Name], [Status], [Floor], [Room], [DelayReason], [DateCreated], [DateCompleted], [DateDelayed], [StatusNum], [RJobID], [RoomTypeId]) VALUES (newid(), NULL, N'Job13_26_0', N'Not Started', 13, 26, N'Lack of Materials', CAST(N'2017-05-08T13:09:55.213' AS DateTime), NULL, CAST(N'2017-05-08T13:09:55.213' AS DateTime), 2, NULL, N'8186da7f-c775-4299-aecc-22ec5713023f')
 INSERT [dbo].[RX_Job] ([Id], [ContractorID], [Name], [Status], [Floor], [Room], [DelayReason], [DateCreated], [DateCompleted], [DateDelayed], [StatusNum], [RJobID], [RoomTypeId]) VALUES (newid(), NULL, N'Job13_26_1', N'Not Started', 13, 26, NULL, CAST(N'2017-05-08T13:09:55.227' AS DateTime), NULL, NULL, 2, NULL, N'e6571828-060e-4d8c-8e5c-6de8814b03c0')
 INSERT [dbo].[RX_Job] ([Id], [ContractorID], [Name], [Status], [Floor], [Room], [DelayReason], [DateCreated], [DateCompleted], [DateDelayed], [StatusNum], [RJobID], [RoomTypeId]) VALUES (newid(), NULL, N'Job13_27_0', N'Not Started', 13, 27, NULL, CAST(N'2017-05-08T13:09:55.240' AS DateTime), NULL, NULL, 2, NULL, N'8186da7f-c775-4299-aecc-22ec5713023f')
-GO						 
+GO                       
 INSERT [dbo].[RX_Job] ([Id], [ContractorID], [Name], [Status], [Floor], [Room], [DelayReason], [DateCreated], [DateCompleted], [DateDelayed], [StatusNum], [RJobID], [RoomTypeId]) VALUES (newid(), NULL, N'Job13_27_1', N'Not Started', 13, 27, NULL, CAST(N'2017-05-08T13:09:55.253' AS DateTime), NULL, NULL, 2, NULL, N'02a5381a-65ab-40c5-a99e-5c591290a901')
 INSERT [dbo].[RX_Job] ([Id], [ContractorID], [Name], [Status], [Floor], [Room], [DelayReason], [DateCreated], [DateCompleted], [DateDelayed], [StatusNum], [RJobID], [RoomTypeId]) VALUES (newid(), NULL, N'Job13_28_0', N'Not Started', 13, 28, NULL, CAST(N'2017-05-08T13:09:55.273' AS DateTime), CAST(N'2017-05-08T13:09:55.273' AS DateTime), NULL, 2, NULL, N'ba020bf0-b205-4b9a-9390-ff7823d2cc0f')
 INSERT [dbo].[RX_Job] ([Id], [ContractorID], [Name], [Status], [Floor], [Room], [DelayReason], [DateCreated], [DateCompleted], [DateDelayed], [StatusNum], [RJobID], [RoomTypeId]) VALUES (newid(), NULL, N'Job13_28_1', N'Not Started', 13, 28, NULL, CAST(N'2017-05-08T13:09:55.307' AS DateTime), NULL, NULL, 2, NULL, N'86f23884-1971-4bdf-90db-629f887ed76a')
@@ -947,7 +947,7 @@ INSERT [dbo].[RX_Job] ([Id], [ContractorID], [Name], [Status], [Floor], [Room], 
 INSERT [dbo].[RX_Job] ([Id], [ContractorID], [Name], [Status], [Floor], [Room], [DelayReason], [DateCreated], [DateCompleted], [DateDelayed], [StatusNum], [RJobID], [RoomTypeId]) VALUES (newid(), NULL, N'Job15_14_0', N'In Progress', 15, 14, NULL, CAST(N'2017-05-08T13:09:57.397' AS DateTime), NULL, NULL, 3, NULL, N'50afd651-40d4-4704-8c06-dfed2f922ab9')
 INSERT [dbo].[RX_Job] ([Id], [ContractorID], [Name], [Status], [Floor], [Room], [DelayReason], [DateCreated], [DateCompleted], [DateDelayed], [StatusNum], [RJobID], [RoomTypeId]) VALUES (newid(), NULL, N'Job15_14_1', N'Not Started', 15, 14, NULL, CAST(N'2017-05-08T13:09:57.413' AS DateTime), NULL, NULL, 2, NULL, N'e6571828-060e-4d8c-8e5c-6de8814b03c0')
 INSERT [dbo].[RX_Job] ([Id], [ContractorID], [Name], [Status], [Floor], [Room], [DelayReason], [DateCreated], [DateCompleted], [DateDelayed], [StatusNum], [RJobID], [RoomTypeId]) VALUES (newid(), NULL, N'Job15_15_0', N'In Progress', 15, 15, NULL, CAST(N'2017-05-08T13:09:57.433' AS DateTime), NULL, NULL, 3, NULL, N'911c7af6-2d20-4b06-ad06-bd835a3871f1')
-GO						 
+GO                       
 INSERT [dbo].[RX_Job] ([Id], [ContractorID], [Name], [Status], [Floor], [Room], [DelayReason], [DateCreated], [DateCompleted], [DateDelayed], [StatusNum], [RJobID], [RoomTypeId]) VALUES (newid(), NULL, N'Job15_15_1', N'Not Started', 15, 15, NULL, CAST(N'2017-05-08T13:09:57.447' AS DateTime), NULL, NULL, 2, NULL, N'02a5381a-65ab-40c5-a99e-5c591290a901')
 INSERT [dbo].[RX_Job] ([Id], [ContractorID], [Name], [Status], [Floor], [Room], [DelayReason], [DateCreated], [DateCompleted], [DateDelayed], [StatusNum], [RJobID], [RoomTypeId]) VALUES (newid(), NULL, N'Job15_16_0', N'Not Started', 15, 16, NULL, CAST(N'2017-05-08T13:09:57.463' AS DateTime), NULL, NULL, 2, NULL, N'a198765c-357a-456e-ae4d-c49bb62d35d3')
 INSERT [dbo].[RX_Job] ([Id], [ContractorID], [Name], [Status], [Floor], [Room], [DelayReason], [DateCreated], [DateCompleted], [DateDelayed], [StatusNum], [RJobID], [RoomTypeId]) VALUES (newid(), NULL, N'Job15_16_1', N'Complete', 15, 16, NULL, CAST(N'2017-05-08T13:09:57.477' AS DateTime), CAST(N'2017-05-08T13:09:57.477' AS DateTime), NULL, 1, NULL, N'3373b164-a8ab-44ab-914c-d4f88ffed881')
@@ -1048,7 +1048,7 @@ INSERT [dbo].[RX_Job] ([Id], [ContractorID], [Name], [Status], [Floor], [Room], 
 INSERT [dbo].[RX_Job] ([Id], [ContractorID], [Name], [Status], [Floor], [Room], [DelayReason], [DateCreated], [DateCompleted], [DateDelayed], [StatusNum], [RJobID], [RoomTypeId]) VALUES (newid(), NULL, N'Job17_2_0', N'In Progress', 17, 2, NULL, CAST(N'2017-05-08T13:09:59.227' AS DateTime), NULL, NULL, 3, NULL, N'8186da7f-c775-4299-aecc-22ec5713023f')
 INSERT [dbo].[RX_Job] ([Id], [ContractorID], [Name], [Status], [Floor], [Room], [DelayReason], [DateCreated], [DateCompleted], [DateDelayed], [StatusNum], [RJobID], [RoomTypeId]) VALUES (newid(), NULL, N'Job17_2_1', N'Not Started', 17, 2, NULL, CAST(N'2017-05-08T13:09:59.240' AS DateTime), NULL, NULL, 2, NULL, N'50afd651-40d4-4704-8c06-dfed2f922ab9')
 INSERT [dbo].[RX_Job] ([Id], [ContractorID], [Name], [Status], [Floor], [Room], [DelayReason], [DateCreated], [DateCompleted], [DateDelayed], [StatusNum], [RJobID], [RoomTypeId]) VALUES (newid(), NULL, N'Job17_3_0', N'In Progress', 17, 3, NULL, CAST(N'2017-05-08T13:09:59.253' AS DateTime), NULL, NULL, 3, NULL, N'ba020bf0-b205-4b9a-9390-ff7823d2cc0f')
-GO						 
+GO                       
 INSERT [dbo].[RX_Job] ([Id], [ContractorID], [Name], [Status], [Floor], [Room], [DelayReason], [DateCreated], [DateCompleted], [DateDelayed], [StatusNum], [RJobID], [RoomTypeId]) VALUES (newid(), NULL, N'Job17_3_1', N'Not Started', 17, 3, NULL, CAST(N'2017-05-08T13:09:59.273' AS DateTime), NULL, NULL, 2, NULL, N'911c7af6-2d20-4b06-ad06-bd835a3871f1')
 INSERT [dbo].[RX_Job] ([Id], [ContractorID], [Name], [Status], [Floor], [Room], [DelayReason], [DateCreated], [DateCompleted], [DateDelayed], [StatusNum], [RJobID], [RoomTypeId]) VALUES (newid(), NULL, N'Job17_4_0', N'Delayed', 17, 4, N'Room Not Ready', CAST(N'2017-05-08T13:09:59.290' AS DateTime), NULL, CAST(N'2017-05-08T13:09:59.290' AS DateTime), 4, NULL, N'86f23884-1971-4bdf-90db-629f887ed76a')
 INSERT [dbo].[RX_Job] ([Id], [ContractorID], [Name], [Status], [Floor], [Room], [DelayReason], [DateCreated], [DateCompleted], [DateDelayed], [StatusNum], [RJobID], [RoomTypeId]) VALUES (newid(), NULL, N'Job17_4_1', N'Complete', 17, 4, NULL, CAST(N'2017-05-08T13:09:59.303' AS DateTime), CAST(N'2017-05-08T13:09:59.303' AS DateTime), NULL, 1, NULL, N'ec572a33-1d58-4671-870e-bc4756f79ee4')
@@ -1149,7 +1149,7 @@ INSERT [dbo].[RX_Job] ([Id], [ContractorID], [Name], [Status], [Floor], [Room], 
 INSERT [dbo].[RX_Job] ([Id], [ContractorID], [Name], [Status], [Floor], [Room], [DelayReason], [DateCreated], [DateCompleted], [DateDelayed], [StatusNum], [RJobID], [RoomTypeId]) VALUES (newid(), NULL, N'Job18_21_0', N'Not Started', 18, 21, NULL, CAST(N'2017-05-08T13:10:01.530' AS DateTime), NULL, NULL, 2, NULL, N'50afd651-40d4-4704-8c06-dfed2f922ab9')
 INSERT [dbo].[RX_Job] ([Id], [ContractorID], [Name], [Status], [Floor], [Room], [DelayReason], [DateCreated], [DateCompleted], [DateDelayed], [StatusNum], [RJobID], [RoomTypeId]) VALUES (newid(), NULL, N'Job18_21_1', N'In Progress', 18, 21, NULL, CAST(N'2017-05-08T13:10:01.547' AS DateTime), NULL, NULL, 3, NULL, N'ba020bf0-b205-4b9a-9390-ff7823d2cc0f')
 INSERT [dbo].[RX_Job] ([Id], [ContractorID], [Name], [Status], [Floor], [Room], [DelayReason], [DateCreated], [DateCompleted], [DateDelayed], [StatusNum], [RJobID], [RoomTypeId]) VALUES (newid(), NULL, N'Job18_22_0', N'Not Started', 18, 22, NULL, CAST(N'2017-05-08T13:10:01.560' AS DateTime), NULL, NULL, 2, NULL, N'911c7af6-2d20-4b06-ad06-bd835a3871f1')
-GO						 
+GO                       
 INSERT [dbo].[RX_Job] ([Id], [ContractorID], [Name], [Status], [Floor], [Room], [DelayReason], [DateCreated], [DateCompleted], [DateDelayed], [StatusNum], [RJobID], [RoomTypeId]) VALUES (newid(), NULL, N'Job18_22_1', N'Not Started', 18, 22, NULL, CAST(N'2017-05-08T13:10:01.573' AS DateTime), NULL, NULL, 2, NULL, N'911c7af6-2d20-4b06-ad06-bd835a3871f1')
 INSERT [dbo].[RX_Job] ([Id], [ContractorID], [Name], [Status], [Floor], [Room], [DelayReason], [DateCreated], [DateCompleted], [DateDelayed], [StatusNum], [RJobID], [RoomTypeId]) VALUES (newid(), NULL, N'Job18_23_0', N'Not Started', 18, 23, NULL, CAST(N'2017-05-08T13:10:01.587' AS DateTime), NULL, NULL, 2, NULL, N'86f23884-1971-4bdf-90db-629f887ed76a')
 INSERT [dbo].[RX_Job] ([Id], [ContractorID], [Name], [Status], [Floor], [Room], [DelayReason], [DateCreated], [DateCompleted], [DateDelayed], [StatusNum], [RJobID], [RoomTypeId]) VALUES (newid(), NULL, N'Job18_23_1', N'Complete', 18, 23, NULL, CAST(N'2017-05-08T13:10:01.603' AS DateTime), CAST(N'2017-05-08T13:10:01.603' AS DateTime), NULL, 1, NULL, N'a198765c-357a-456e-ae4d-c49bb62d35d3')
@@ -1250,7 +1250,7 @@ INSERT [dbo].[RX_Job] ([Id], [ContractorID], [Name], [Status], [Floor], [Room], 
 INSERT [dbo].[RX_Job] ([Id], [ContractorID], [Name], [Status], [Floor], [Room], [DelayReason], [DateCreated], [DateCompleted], [DateDelayed], [StatusNum], [RJobID], [RoomTypeId]) VALUES (newid(), NULL, N'Job20_10_0', N'In Progress', 20, 10, NULL, CAST(N'2017-05-08T13:10:06.610' AS DateTime), NULL, NULL, 3, NULL, N'50afd651-40d4-4704-8c06-dfed2f922ab9')
 INSERT [dbo].[RX_Job] ([Id], [ContractorID], [Name], [Status], [Floor], [Room], [DelayReason], [DateCreated], [DateCompleted], [DateDelayed], [StatusNum], [RJobID], [RoomTypeId]) VALUES (newid(), NULL, N'Job20_10_1', N'In Progress', 20, 10, NULL, CAST(N'2017-05-08T13:10:06.620' AS DateTime), NULL, NULL, 3, NULL, N'50afd651-40d4-4704-8c06-dfed2f922ab9')
 INSERT [dbo].[RX_Job] ([Id], [ContractorID], [Name], [Status], [Floor], [Room], [DelayReason], [DateCreated], [DateCompleted], [DateDelayed], [StatusNum], [RJobID], [RoomTypeId]) VALUES (newid(), NULL, N'Job20_11_0', N'In Progress', 20, 11, NULL, CAST(N'2017-05-08T13:10:06.633' AS DateTime), NULL, NULL, 3, NULL, N'ba020bf0-b205-4b9a-9390-ff7823d2cc0f')
-GO				
+GO              
 INSERT [dbo].[RX_Job] ([Id], [ContractorID], [Name], [Status], [Floor], [Room], [DelayReason], [DateCreated], [DateCompleted], [DateDelayed], [StatusNum], [RJobID], [RoomTypeId]) VALUES (newid(), NULL, N'Job20_11_1', N'Not Started', 20, 11, NULL, CAST(N'2017-05-08T13:10:06.647' AS DateTime), NULL, NULL, 2, NULL, N'911c7af6-2d20-4b06-ad06-bd835a3871f1')
 INSERT [dbo].[RX_Job] ([Id], [ContractorID], [Name], [Status], [Floor], [Room], [DelayReason], [DateCreated], [DateCompleted], [DateDelayed], [StatusNum], [RJobID], [RoomTypeId]) VALUES (newid(), NULL, N'Job20_12_0', N'Complete', 20, 12, NULL, CAST(N'2017-05-08T13:10:06.663' AS DateTime), CAST(N'2017-05-08T13:10:06.663' AS DateTime), NULL, 1, NULL, N'02a5381a-65ab-40c5-a99e-5c591290a901')
 INSERT [dbo].[RX_Job] ([Id], [ContractorID], [Name], [Status], [Floor], [Room], [DelayReason], [DateCreated], [DateCompleted], [DateDelayed], [StatusNum], [RJobID], [RoomTypeId]) VALUES (newid(), NULL, N'Job20_12_1', N'In Progress', 20, 12, NULL, CAST(N'2017-05-08T13:10:06.687' AS DateTime), NULL, NULL, 3, NULL, N'3373b164-a8ab-44ab-914c-d4f88ffed881')
@@ -1351,7 +1351,7 @@ INSERT [dbo].[RX_Job] ([Id], [ContractorID], [Name], [Status], [Floor], [Room], 
 INSERT [dbo].[RX_Job] ([Id], [ContractorID], [Name], [Status], [Floor], [Room], [DelayReason], [DateCreated], [DateCompleted], [DateDelayed], [StatusNum], [RJobID], [RoomTypeId]) VALUES (newid(), NULL, N'Job21_29_0', N'In Progress', 21, 29, NULL, CAST(N'2017-05-08T13:10:08.817' AS DateTime), NULL, NULL, 3, NULL, N'ba020bf0-b205-4b9a-9390-ff7823d2cc0f')
 INSERT [dbo].[RX_Job] ([Id], [ContractorID], [Name], [Status], [Floor], [Room], [DelayReason], [DateCreated], [DateCompleted], [DateDelayed], [StatusNum], [RJobID], [RoomTypeId]) VALUES (newid(), NULL, N'Job21_29_1', N'Not Started', 21, 29, NULL, CAST(N'2017-05-08T13:10:08.867' AS DateTime), NULL, NULL, 2, NULL, N'a198765c-357a-456e-ae4d-c49bb62d35d3')
 INSERT [dbo].[RX_Job] ([Id], [ContractorID], [Name], [Status], [Floor], [Room], [DelayReason], [DateCreated], [DateCompleted], [DateDelayed], [StatusNum], [RJobID], [RoomTypeId]) VALUES (newid(), NULL, N'Job21_30_0', N'Not Started', 21, 30, NULL, CAST(N'2017-05-08T13:10:08.880' AS DateTime), NULL, NULL, 2, NULL, N'a7283ef0-4600-41e9-9ee0-03144be29ec0')
-GO				
+GO              
 INSERT [dbo].[RX_Job] ([Id], [ContractorID], [Name], [Status], [Floor], [Room], [DelayReason], [DateCreated], [DateCompleted], [DateDelayed], [StatusNum], [RJobID], [RoomTypeId]) VALUES (newid(), NULL, N'Job21_30_1', N'Delayed', 21, 30, N'Labor Shortage', CAST(N'2017-05-08T13:10:08.897' AS DateTime), NULL, CAST(N'2017-05-08T13:10:08.897' AS DateTime), 4, NULL, N'911c7af6-2d20-4b06-ad06-bd835a3871f1')
 INSERT [dbo].[RX_Job] ([Id], [ContractorID], [Name], [Status], [Floor], [Room], [DelayReason], [DateCreated], [DateCompleted], [DateDelayed], [StatusNum], [RJobID], [RoomTypeId]) VALUES (newid(), NULL, N'Job22_0_0', N'Not Started', 22, 0, NULL, CAST(N'2017-05-08T13:10:08.950' AS DateTime), NULL, NULL, 2, NULL, N'86f23884-1971-4bdf-90db-629f887ed76a')
 INSERT [dbo].[RX_Job] ([Id], [ContractorID], [Name], [Status], [Floor], [Room], [DelayReason], [DateCreated], [DateCompleted], [DateDelayed], [StatusNum], [RJobID], [RoomTypeId]) VALUES (newid(), NULL, N'Job22_0_1', N'Complete', 22, 0, NULL, CAST(N'2017-05-08T13:10:09.003' AS DateTime), CAST(N'2017-05-08T13:10:09.003' AS DateTime), NULL, 1, NULL, N'ec572a33-1d58-4671-870e-bc4756f79ee4')
@@ -1452,7 +1452,7 @@ INSERT [dbo].[RX_Job] ([Id], [ContractorID], [Name], [Status], [Floor], [Room], 
 INSERT [dbo].[RX_Job] ([Id], [ContractorID], [Name], [Status], [Floor], [Room], [DelayReason], [DateCreated], [DateCompleted], [DateDelayed], [StatusNum], [RJobID], [RoomTypeId]) VALUES (newid(), NULL, N'Job23_17_0', N'Complete', 23, 17, NULL, CAST(N'2017-05-08T13:10:11.293' AS DateTime), CAST(N'2017-05-08T13:10:11.293' AS DateTime), NULL, 1, NULL, N'ec572a33-1d58-4671-870e-bc4756f79ee4')
 INSERT [dbo].[RX_Job] ([Id], [ContractorID], [Name], [Status], [Floor], [Room], [DelayReason], [DateCreated], [DateCompleted], [DateDelayed], [StatusNum], [RJobID], [RoomTypeId]) VALUES (newid(), NULL, N'Job23_17_1', N'Complete', 23, 17, NULL, CAST(N'2017-05-08T13:10:11.310' AS DateTime), CAST(N'2017-05-08T13:10:11.310' AS DateTime), NULL, 1, NULL, N'ec572a33-1d58-4671-870e-bc4756f79ee4')
 INSERT [dbo].[RX_Job] ([Id], [ContractorID], [Name], [Status], [Floor], [Room], [DelayReason], [DateCreated], [DateCompleted], [DateDelayed], [StatusNum], [RJobID], [RoomTypeId]) VALUES (newid(), NULL, N'Job23_18_0', N'In Progress', 23, 18, NULL, CAST(N'2017-05-08T13:10:11.323' AS DateTime), NULL, NULL, 3, NULL, N'e4cdf330-608e-43a1-bb0c-2483233e2163')
-GO				
+GO              
 INSERT [dbo].[RX_Job] ([Id], [ContractorID], [Name], [Status], [Floor], [Room], [DelayReason], [DateCreated], [DateCompleted], [DateDelayed], [StatusNum], [RJobID], [RoomTypeId]) VALUES (newid(), NULL, N'Job23_18_1', N'In Progress', 23, 18, NULL, CAST(N'2017-05-08T13:10:11.340' AS DateTime), NULL, NULL, 3, NULL, N'8186da7f-c775-4299-aecc-22ec5713023f')
 INSERT [dbo].[RX_Job] ([Id], [ContractorID], [Name], [Status], [Floor], [Room], [DelayReason], [DateCreated], [DateCompleted], [DateDelayed], [StatusNum], [RJobID], [RoomTypeId]) VALUES (newid(), NULL, N'Job23_19_0', N'Not Started', 23, 19, NULL, CAST(N'2017-05-08T13:10:11.353' AS DateTime), NULL, NULL, 2, NULL, N'50afd651-40d4-4704-8c06-dfed2f922ab9')
 INSERT [dbo].[RX_Job] ([Id], [ContractorID], [Name], [Status], [Floor], [Room], [DelayReason], [DateCreated], [DateCompleted], [DateDelayed], [StatusNum], [RJobID], [RoomTypeId]) VALUES (newid(), NULL, N'Job23_19_1', N'Complete', 23, 19, NULL, CAST(N'2017-05-08T13:10:11.367' AS DateTime), CAST(N'2017-05-08T13:10:11.367' AS DateTime), NULL, 1, NULL, N'02a5381a-65ab-40c5-a99e-5c591290a901')
@@ -1553,7 +1553,7 @@ INSERT [dbo].[RX_Job] ([Id], [ContractorID], [Name], [Status], [Floor], [Room], 
 INSERT [dbo].[RX_Job] ([Id], [ContractorID], [Name], [Status], [Floor], [Room], [DelayReason], [DateCreated], [DateCompleted], [DateDelayed], [StatusNum], [RJobID], [RoomTypeId]) VALUES (newid(), 0, N'Jb', N'In Progress', 19, 20, NULL, CAST(N'2017-05-08T17:15:52.640' AS DateTime), NULL, NULL, 3, 13, N'ba020bf0-b205-4b9a-9390-ff7823d2cc0f')
 INSERT [dbo].[RX_Job] ([Id], [ContractorID], [Name], [Status], [Floor], [Room], [DelayReason], [DateCreated], [DateCompleted], [DateDelayed], [StatusNum], [RJobID], [RoomTypeId]) VALUES (newid(), 0, N'Jb', N'Complete', 19, 20, NULL, CAST(N'2017-05-08T17:15:55.993' AS DateTime), NULL, NULL, 1, 14, N'ba020bf0-b205-4b9a-9390-ff7823d2cc0f')
 INSERT [dbo].[RX_Job] ([Id], [ContractorID], [Name], [Status], [Floor], [Room], [DelayReason], [DateCreated], [DateCompleted], [DateDelayed], [StatusNum], [RJobID], [RoomTypeId]) VALUES (newid(), 0, N'Jb', N'Not Started', 19, 20, NULL, CAST(N'2017-05-08T17:15:58.953' AS DateTime), NULL, NULL, 2, 15, N'ba020bf0-b205-4b9a-9390-ff7823d2cc0f')
-GO					
+GO                  
 INSERT [dbo].[RX_Job] ([Id], [ContractorID], [Name], [Status], [Floor], [Room], [DelayReason], [DateCreated], [DateCompleted], [DateDelayed], [StatusNum], [RJobID], [RoomTypeId]) VALUES (newid(), 0, N'Jb', N'Complete', 19, 20, NULL, CAST(N'2017-05-08T17:16:01.543' AS DateTime), NULL, NULL, 1, 16, N'ba020bf0-b205-4b9a-9390-ff7823d2cc0f')
 INSERT [dbo].[RX_Job] ([Id], [ContractorID], [Name], [Status], [Floor], [Room], [DelayReason], [DateCreated], [DateCompleted], [DateDelayed], [StatusNum], [RJobID], [RoomTypeId]) VALUES (newid(), 0, N'Jb', N'Complete', 19, 20, NULL, CAST(N'2017-05-08T17:16:04.220' AS DateTime), NULL, NULL, 1, 17, N'ba020bf0-b205-4b9a-9390-ff7823d2cc0f')
 INSERT [dbo].[RX_Job] ([Id], [ContractorID], [Name], [Status], [Floor], [Room], [DelayReason], [DateCreated], [DateCompleted], [DateDelayed], [StatusNum], [RJobID], [RoomTypeId]) VALUES (newid(), 0, N'Jb', N'Complete', 19, 20, NULL, CAST(N'2017-05-08T17:16:07.003' AS DateTime), NULL, NULL, 1, 18, N'ba020bf0-b205-4b9a-9390-ff7823d2cc0f')

@@ -9,11 +9,11 @@ interface State {
 
 interface IJobItemProps {
     job: Job;
-	onClick: ((job: Job) => void)
+    onClick: ((job: Job) => void)
 }
 
 function JobItem(props: IJobItemProps) {
-	let rowColor = props.job.status.replace(/\s/g, '').toLowerCase();
+    let rowColor = props.job.status.replace(/\s/g, '').toLowerCase();
     return (
         <tr className={rowColor} onClick={() => props.onClick(props.job)}>
             <td>{props.job.id}</td>
@@ -33,14 +33,14 @@ class JobList extends React.Component<{}, State> {
            jobs: [] 
        };
 
-	   this.updateJobStatus = this.updateJobStatus.bind(this);
+       this.updateJobStatus = this.updateJobStatus.bind(this);
    }
    
    public componentDidMount() {
        const loadData = async () => {
            const results: any = await fetch(`http://localhost:5000/api/jobs`);
            const data: any = await results.json();
-		   const jobs: Array<Job> = data.items;
+           const jobs: Array<Job> = data.items;
            this.setState({ jobs: jobs });
        };
 
@@ -48,32 +48,32 @@ class JobList extends React.Component<{}, State> {
    }
    
    public updateJobStatus(job: Job) {
-	   // Shortcut taken, there's a better way.
-	   if (job.status !== 'In Progress' && job.status !== 'Delayed') {
-		   return;
-	   }
-	   
+       // Shortcut taken, there's a better way.
+       if (job.status !== 'In Progress' && job.status !== 'Delayed') {
+           return;
+       }
+       
        const updateStatus = async () => {
           const results: any = await fetch(`http://localhost:5000/api/jobs/status`, {
-	          method: 'PUT',
-	          body: JSON.stringify({job}),
-	          headers: {
-		          'Content-Type': 'application/json'
-	          }
+              method: 'PUT',
+              body: JSON.stringify({job}),
+              headers: {
+                  'Content-Type': 'application/json'
+              }
           });
-		
+        
           const data: any = await results.json();
-	      const success: boolean = data.success;
-		  
-		  if (success) {
-			  job.status = 'Complete';
-			  this.setState({ 
-			      jobs: this.state.jobs
-		      });
-		  }
-		  else {
-			  alert("Failed to complete job");
-		  }
+          const success: boolean = data.success;
+          
+          if (success) {
+              job.status = 'Complete';
+              this.setState({ 
+                  jobs: this.state.jobs
+              });
+          }
+          else {
+              alert("Failed to complete job");
+          }
        };
 
        updateStatus();
