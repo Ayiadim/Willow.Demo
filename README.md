@@ -4,7 +4,7 @@
 
 You will need to have Microsoft SQL Express installed with a database named "Demo", run the script DemoDBScriptQuery.sql found in /misc or as provided to populate this database.
 
-You will also need to have npm and webpack installed.
+You will also need to have npm, yarn and webpack installed.
 
 ## Starting locally
 
@@ -12,7 +12,7 @@ To build the client run the following command from root:
 
 ```
 cd src/Willow.Demo.Client
-npm install
+yarn install
 webpack
 ```
 
@@ -65,3 +65,4 @@ I deliberately chose not to include the following features due to time constrain
  * Hide ConnectionString
  * Health check endpoint
  * Implement Path.cs
+ * HTTPS
