@@ -8,8 +8,8 @@
     {
         public DefaultProfile()
         {
-            CreateMap<Job, RxJob>();
-            CreateMap<RoomType, RxRoomType>();
+            CreateMap<RxJob, Job>();
+            CreateMap<RxRoomType, RoomType>();
         }
     }
 }

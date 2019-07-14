@@ -16,6 +16,7 @@
         public DateTime? DateDelayed { get; set; }
         public int? StatusNum { get; set; }
         public int? RjobId { get; set; }
-        public RoomType RoomType { get; set; }
+
+        public virtual RoomType RoomType { get; set; }
     }
 }

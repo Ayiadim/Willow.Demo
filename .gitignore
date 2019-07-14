@@ -4,6 +4,7 @@ project.lock.json
 .DS_Store
 *.pyc
 nupkg/
+wwwroot/
 
 # Visual Studio Code
 .vscode
@@ -31,6 +32,9 @@ msbuild.err
 msbuild.wrn
 /.sonarqube
 /Tests/coverage.opencover.xml
+
+# Node
+node_modules/
 
 # Visual Studio 2015
 .vs/

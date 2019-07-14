@@ -21,8 +21,10 @@
         [HttpGet]
         [ProducesResponseType(typeof(GetFloorsQueryResponse), (int)HttpStatusCode.OK)]
         [ProducesResponseType(typeof(GetFloorsQueryResponse), (int)HttpStatusCode.BadRequest)]
-        public async Task<IActionResult> GetFloor(GetFloorsQuery query)
+        public async Task<IActionResult> GetFloor()
         {
+            var query = new GetFloorsQuery();
+
             var result = await _mediator.Send(query);
 
             if (result.Success)

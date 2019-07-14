@@ -34,7 +34,17 @@
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "Willow Demo V1");
             });
 
-            app.UseMvc();
+            app.UseStaticFiles();
+
+            app.UseMvc(routes =>
+            {
+                routes.MapRoute(
+                    name: "default",
+                    template: "{controller=Home}/{action=Index}/{id?}");
+                routes.MapRoute(
+                    name: "api",
+                    template: "api/{controller}/{id?}");
+            });
         }
 
         public void ConfigureServices(IServiceCollection services)
@@ -42,7 +52,6 @@
             services
                 .AddServiceRegistrations(Configuration)
                 .AddMediatR(typeof(Startup))
-                .AddAutoMapper(typeof(Startup))
                 //.Configure<AppSettings>(Configuration)
                 .AddSwaggerGen(c =>
                 {
@@ -52,6 +61,7 @@
                         Version = "v1"
                     });
                 })
+                .AddAutoMapper()
                 .AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
         }

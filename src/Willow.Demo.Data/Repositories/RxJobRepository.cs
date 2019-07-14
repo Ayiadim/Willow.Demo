@@ -46,12 +46,14 @@
         public async Task<RxJob> GetAsync(Guid rxJobId)
         {
             return await _context.RxJob
+                .Include(job => job.RoomType)
                 .SingleAsync(rxJob => rxJob.Id == rxJobId);
         }
 
         public async Task<ICollection<RxJob>> GetAllAsync()
         {
             return await _context.RxJob
+                .Include(job => job.RoomType)
                 .ToListAsync();
         }
     }

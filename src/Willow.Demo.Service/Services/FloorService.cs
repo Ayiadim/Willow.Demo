@@ -51,6 +51,8 @@
                     });
                 }
 
+                floor.TotalJobs = floor.Jobs.Count();
+
                 floors.Add(floor);
             }
 

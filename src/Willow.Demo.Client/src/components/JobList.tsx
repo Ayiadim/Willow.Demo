@@ -12,28 +12,16 @@ interface IJobItemProps {
 }
 
 function JobItem(props: IJobItemProps) {
-	let rowColor = props.job.status.trim().toLowerCase();
+	let rowColor = props.job.status.replace(/\s/g, '').toLowerCase();
     return (
-        <tr className={rowColor} onClick={UpdateJobStatus(props.job)}>
+        <tr className={rowColor} onClick={() => this.updateJobStatus(props.job)}>
             <td>{props.job.id}</td>
-            <td>${props.job.name}</td>
+            <td>{props.job.name}</td>
             <td>{props.job.floor}</td>
             <td>{props.job.status}</td>
             <td>{props.job.roomType.name}</td>
         </tr>
     );
-}
-
-function UpdateJobStatus(job: Job) {
-    let response = await fetch(`http://localhost:5000/api/jobs/status`, {
-	    method: 'PUT',
-	    body: Json.stringify(job),
-	    headers: {
-		    'Content-Type': 'application/json'
-	    }
-    });
-	
-	return response.success;
 }
 
 class JobList extends React.Component<{}, State> {
@@ -47,18 +35,37 @@ class JobList extends React.Component<{}, State> {
    
    public componentDidMount() {
        const loadData = async () => {
-        const results = await fetch(`http://localhost:5000/api/jobs`);
-        const data: Array<Job> = await results.json();
-        this.setState({ jobs: data })
+           const results: any = await fetch(`http://localhost:5000/api/jobs`);
+           const data: any = await results.json();
+		   const jobs: Array<Job> = data.items;
+           this.setState({ jobs: jobs })
        };
 
        loadData();
    }
    
-   public render() {        
+   public updateJobStatus(job: Job) {
+	   alert("LOL");
+       const updateStatus = async () => {
+          const results: any = await fetch(`http://localhost:5000/api/jobs/status`, {
+	          method: 'PUT',
+	          body: JSON.stringify(job),
+	          headers: {
+		          'Content-Type': 'application/json'
+	          }
+          });
+		
+          const data: any = await results.json();
+	      const success: boolean = data.success;
+          return success;
+       };
+
+       updateStatus();
+   }
+   
+   public render() {
        return(
            <div>
-               <div><strong>Jobs:</strong></div>
                <table className='table'>
                    <thead>
                        <tr>

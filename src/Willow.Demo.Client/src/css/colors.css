@@ -1,15 +1,15 @@
-tr .complete {
-	color: teal;
+.complete {
+	background-color: teal;
 }
 
-tr .inprogress {
-	color: orange;
+.inprogress {
+	background-color: orange;
 }
 
-tr .delayed {
-	color: red;
+.delayed {
+	background-color: red;
 }
 
-tr .notstarted {
-	color: grey;
+.notstarted {
+	background-color: lightgray;
 }

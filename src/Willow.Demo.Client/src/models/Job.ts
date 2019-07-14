@@ -8,11 +8,11 @@ interface Job {
 	floor: number;
 	room: number;
 	delayReason: string;
-	dateCreated: Date.;
+	dateCreated: Date;
 	dateCompleted: Date;
 	dateDelayed: Date;
-    statusNum: int;
-    rJobId: num;
+    statusNum: number;
+    rJobId: number;
     roomType: RoomType;
 }
 

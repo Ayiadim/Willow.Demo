@@ -6,7 +6,7 @@ class Header extends React.Component {
             <header>
                 <div>
                     <p>
-                        <strong>Ansible Engineer Assessment</strong>
+                        <strong>Willow Engineer Assessment</strong>
                     </p>
                 </div>
             </header>

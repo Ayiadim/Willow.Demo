@@ -1,6 +1,7 @@
 ﻿namespace Willow.Demo.Service.Services
 {
     using AutoMapper;
+    using Data;
     using Data.Repositories;
     using Entities;
     using Responses;
@@ -32,7 +33,7 @@
         {
             var rxJob = await _jobRepository.GetAsync(jobId);
 
-            var job = _mapper.Map<Job>(rxJob);
+            var job = _mapper.Map<RxJob, Job>(rxJob);
 
             return new GetJobsQueryResponse
             {
@@ -49,7 +50,7 @@
 
             foreach (var rxJob in rxJobs)
             {
-                items.Add(_mapper.Map<Job>(rxJob));
+                items.Add(_mapper.Map<RxJob, Job>(rxJob));
             }
 
             return new GetJobsQueryResponse
@@ -72,7 +73,7 @@
                 return new UpdateJobStatusCommandResponse
                 {
                     Success = true,
-                    Items = new List<Job> { _mapper.Map<Job>(rxJob) }
+                    Items = new List<Job> { _mapper.Map<RxJob, Job>(rxJob) }
                 };
             }
 
