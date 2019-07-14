@@ -1,0 +1,25 @@
+{
+  "name": "willow",
+  "version": "1.0.0",
+  "author": "Dimitri Agiakatsikas",
+  "dependencies": {
+    "@types/react": "^15.6.6",
+    "@types/react-dom": "^15.5.6",
+    "react": "^15.6.2",
+    "react-dom": "^15.6.2",
+    "whatwg-fetch": "^2.0.4"
+  },
+  "devDependencies": {
+    "@types/node": "^9.6.1",
+    "awesome-typescript-loader": "^3.3.0",
+    "css-loader": "^0.28.7",
+    "source-map-loader": "^0.2.3",
+    "style-loader": "^0.19.0",
+    "typescript": "^2.6.1",
+    "webpack": "^4.0.0",
+    "webpack-cli": "^2.0.13"
+  },
+  "scripts": {
+    "webpack": "webpack"
+  }
+}

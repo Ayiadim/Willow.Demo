@@ -1,0 +1,15 @@
+tr .complete {
+	color: teal;
+}
+
+tr .inprogress {
+	color: orange;
+}
+
+tr .delayed {
+	color: red;
+}
+
+tr .notstarted {
+	color: grey;
+}
