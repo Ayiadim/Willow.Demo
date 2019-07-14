@@ -6,6 +6,8 @@
     {
         public UpdateJobStatusCommandValidator()
         {
+            RuleFor(c => c.Job)
+                .NotNull();
             RuleFor(c => c.Job.Id)
                 .NotEmpty();
             RuleFor(c => c.Job.Status)

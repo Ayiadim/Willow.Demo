@@ -4,10 +4,20 @@
 
 .inprogress {
 	background-color: orange;
+	cursor: pointer;
+}
+
+.inprogress:hover {
+	background-color: cyan;
 }
 
 .delayed {
 	background-color: red;
+	cursor: pointer;
+}
+
+.delayed:hover {
+	background-color: cyan;
 }
 
 .notstarted {
