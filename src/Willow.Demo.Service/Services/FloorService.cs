@@ -35,6 +35,7 @@
                 var floor = new Floor
                 {
                     FloorNumber = floorGroup.Key.Value,
+                    TotalJobs = floorGroup.Count(),
                     Jobs = new List<JobGrouping>()
                 };
 
@@ -50,8 +51,6 @@
                         RoomType = jobGroup.Key.Name
                     });
                 }
-
-                floor.TotalJobs = floor.Jobs.Count();
 
                 floors.Add(floor);
             }

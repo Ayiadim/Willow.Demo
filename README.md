@@ -56,7 +56,7 @@ Total Time Taken: 5 hrs
 I deliberately chose not to include the following features due to time constraints:
 
  * Use docker compose to setup, build and run both the server and database.
- * Unit tests
+ * Add more Unit tests
  * Improve client validation
  * Improve server Validation
  * Add error messages
@@ -66,3 +66,4 @@ I deliberately chose not to include the following features due to time constrain
  * Health check endpoint
  * Implement Path.cs
  * HTTPS
+ * Convert JobStatus to enum

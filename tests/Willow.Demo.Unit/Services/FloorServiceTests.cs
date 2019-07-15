@@ -1,5 +1,6 @@
 ﻿namespace Willow.Demo.Unit.Services
 {
+    using Data;
     using FluentAssertions;
     using Moq;
     using Service.Entities;
@@ -11,83 +12,25 @@
 
     public class FloorServiceTests
     {
-        private readonly FloorService _floorService;
-        private readonly Mock<IJobService> _jobService;
-
-        public FloorServiceTests()
+        [Theory]
+        [ClassData(typeof(FloorTestData))]
+        public async Task GetAll_WhenGivenData_ReturnsExpected(ICollection<Job> jobs, ICollection<Floor> expected)
         {
-            _jobService = new Mock<IJobService>();
+            var jobServiceMock = new Mock<IJobService>();
 
-            _jobService.Setup(s => s.GetAllAsync())
+            jobServiceMock.Setup(s => s.GetAllAsync())
                 .ReturnsAsync(new GetJobsQueryResponse
                 {
-                    Items = new List<Job>
-                    {
-                        new Job
-                        {
-
-                        },
-                        new Job
-                        {
-
-                        },
-                        new Job
-                        {
-
-                        },
-                        new Job
-                        {
-
-                        },
-                        new Job
-                        {
-
-                        },
-                        new Job
-                        {
-
-                        },
-                        new Job
-                        {
-
-                        },
-                        new Job
-                        {
-
-                        },
-                        new Job
-                        {
-
-                        },
-                        new Job
-                        {
-
-                        },
-                        new Job
-                        {
-
-                        },
-                        new Job
-                        {
-
-                        }
-                    }
+                    Items = jobs
                 })
                 .Verifiable();
 
-            _floorService = new FloorService(_jobService.Object);
-        }
+            var floorService = new FloorService(jobServiceMock.Object);
 
-
-        [Fact]
-        public async Task GetAll_WhenSomething_ReturnsResult()
-        {
-            var result = await _floorService.GetAllAsync();
+            var result = await floorService.GetAllAsync();
 
             result.Should().BeOfType<GetFloorsQueryResponse>();
-
-            Assert.True(result.Success);
-            Assert.Equal(2, result.Items.Count);
+            result.Items.Should().BeEquivalentTo(expected);
         }
     }
 }
